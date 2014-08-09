@@ -3,8 +3,7 @@
 //  stellar++
 //
 //  Created by Ole Andre Birkedal on 05/08/14.
-//  Copyright (c) 2014 Ole Andre Birkedal. All rights reserved.
-//
+
 
 #ifndef stellar___Request_h
 #define stellar___Request_h

@@ -3,8 +3,7 @@
 //  stellar++
 //
 //  Created by Ole Andre Birkedal on 03/08/14.
-//  Copyright (c) 2014 Ole Andre Birkedal. All rights reserved.
-//
+
 
 #include "Stellar.h"
 
