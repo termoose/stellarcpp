@@ -3,19 +3,23 @@
 Connects to the WebSocket Stellar API using [easywsclient](https://github.com/dhbaird/easywsclient) and [rapidjson](https://github.com/miloyip/rapidjson).
 
 ###Features:
-1. 
+1. Get account information
+2. Send Stellars
+
+###Todo:
+1. Finish the subscriber mode
+2. Support more of the Stellar API
 
 
+##Example
 ```C++
 // Create Stellar object, connects to the Stellar network
 Stellar stellar;
 
-// Create the request
-AccountInfoRequest req("g9j5EDysguoofGCsDS357HeHAeCg2NbxaW");
+auto info = stellar.GetInfo("address");
 
-// Send json request to Stellar network
-std::string reply = stellar.request(req.json());
-
-std::cout << "Account information: " << reply << std::endl;
+// Send 100 Stellar to me
+auto reply = stellar.SendStellar("secret", "your_address", "g9j5EDysguoofGCsDS357HeHAeCg2NbxaW", 100);
+std::cout << "Payment status: " << reply.status << std::endl;
 
 ```
