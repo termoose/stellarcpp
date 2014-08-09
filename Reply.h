@@ -16,6 +16,8 @@ public:
     {
         doc.Parse<0>(reply.c_str());
         
+        if(!doc.IsObject()) return;
+        
         id = GetInt("id", doc);
         status = GetString("status", doc);
         type = GetString("type", doc);
@@ -59,8 +61,7 @@ public:
     ReplyPaymentRequest(const std::string& reply)
     : ReplyBase(reply)
     {
-        std::cout << "Payment reply: " << reply << std::endl;
-        
+        if(!doc.IsObject()) return;
         if(!doc.HasMember("result")) return;
         const auto & result = doc["result"];
         
@@ -78,6 +79,7 @@ public:
     ReplyAccountInfo(const std::string& reply)
     : ReplyBase(reply), balance(0)
     {
+        if(!doc.IsObject()) return;
         if(!doc.HasMember("result")) return;
         const auto & result = doc["result"];
         

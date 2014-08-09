@@ -35,10 +35,10 @@ public:
     ReplyAccountInfo GetInfo(const std::string& account);
     ReplyPaymentRequest SendStellar(const std::string& secret, const std::string& from, const std::string& to, int64_t stellars);
 
+private:
     std::string request(const std::string& req, int timeout = 0);
     void subscribe(const std::string& user);
-
-private:
+    
     WebSocket::pointer ws;
     uint64_t m_id;
     std::mutex socket_mutex;

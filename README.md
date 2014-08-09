@@ -1,6 +1,6 @@
 #Stellar C++ API
 
-Connects to the WebSocket Stellar API using [easywsclient](https://github.com/dhbaird/easywsclient) and [rapidjson](https://github.com/miloyip/rapidjson).
+Very simple library that connects to the WebSocket Stellar API using [easywsclient](https://github.com/dhbaird/easywsclient) and [rapidjson](https://github.com/miloyip/rapidjson).
 
 ###Features:
 1. Get account information
@@ -9,6 +9,7 @@ Connects to the WebSocket Stellar API using [easywsclient](https://github.com/dh
 ###Todo:
 1. Finish the subscriber mode
 2. Support more of the Stellar API
+3. Add exception handling to the JSON parsing
 
 
 ##Example

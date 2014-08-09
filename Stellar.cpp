@@ -19,6 +19,7 @@ ReplyAccountInfo Stellar::GetInfo(const std::string &account)
 
 ReplyPaymentRequest Stellar::SendStellar(const std::string& secret, const std::string &from, const std::string &to, int64_t stellars)
 {
+    // Converts to microstellars
     SubmitPaymentRequest req(secret, from, to, stellars * 1000000);
     const std::string & reply_json = request(req.json());
     
