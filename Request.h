@@ -61,7 +61,7 @@ public:
         rapidjson::Writer<rapidjson::StringBuffer> writer(string_buffer);
         
         doc.Accept(writer);
-        
+
         return string_buffer.GetString();
     }
     
@@ -85,23 +85,27 @@ protected:
 class SubmitPaymentRequest : public RequestBase
 {
 public:
-    SubmitPaymentRequest(const std::string& from, const std::string& to, int64_t stellars)
+    SubmitPaymentRequest(const std::string& secret, const std::string& from, const std::string& to, int64_t stellars)
     : RequestBase(Submit)
     {
-        AddString("secret", from);
+        AddString("secret", secret);
         
         rapidjson::Value tx_json(rapidjson::kObjectType);
         
         rapidjson::Value account(rapidjson::kStringType);
-        account.SetString(to.c_str(), doc.GetAllocator());
+        account.SetString(from.c_str(), doc.GetAllocator());
+        
+        rapidjson::Value destination(rapidjson::kStringType);
+        destination.SetString(to.c_str(), doc.GetAllocator());
         
         rapidjson::Value transaction_type(rapidjson::kStringType);
         transaction_type.SetString("Payment");
         
         rapidjson::Value value(stellars);
         
+        tx_json.AddMember("Account", account, doc.GetAllocator());
         tx_json.AddMember("TransactionType", transaction_type, doc.GetAllocator());
-        tx_json.AddMember("Destination", account, doc.GetAllocator());
+        tx_json.AddMember("Destination", destination, doc.GetAllocator());
         tx_json.AddMember("Amount", value, doc.GetAllocator());
         
         doc.AddMember("tx_json", tx_json, doc.GetAllocator());
