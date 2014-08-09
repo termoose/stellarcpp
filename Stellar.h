@@ -18,6 +18,7 @@
 #include "easywsclient.hpp"
 
 #include "Request.h"
+#include "Reply.h"
 
 
 using easywsclient::WebSocket;
