@@ -1,4 +1,10 @@
-#H1 Stellar C++ API
+#Stellar C++ API
+
+Connects to the WebSocket Stellar API using [easywsclient](https://github.com/dhbaird/easywsclient) and [rapidjson](https://github.com/miloyip/rapidjson).
+
+###Features:
+1. 
+
 
 ```C++
 // Create Stellar object, connects to the Stellar network

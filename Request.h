@@ -85,7 +85,7 @@ protected:
 class SubmitPaymentRequest : public RequestBase
 {
 public:
-    SubmitPaymentRequest(const std::string& from, const std::string& to, unsigned int stellars)
+    SubmitPaymentRequest(const std::string& from, const std::string& to, int64_t stellars)
     : RequestBase(Submit)
     {
         AddString("secret", from);

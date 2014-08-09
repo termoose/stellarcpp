@@ -31,6 +31,9 @@ public:
     
     ~Stellar()
     {}
+    
+    ReplyAccountInfo GetInfo(const std::string& account);
+    ReplyPaymentRequest Pay(const std::string& from, const std::string& to, int64_t stellars);
 
     std::string request(const std::string& req, int timeout = 0);
     void subscribe(const std::string& user);
