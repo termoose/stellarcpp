@@ -17,8 +17,9 @@ Connects to the WebSocket Stellar API using [easywsclient](https://github.com/dh
 Stellar stellar;
 
 auto info = stellar.GetInfo("address");
+std::cout << "Account balance: " << info.balance << std::endl;
 
-// Send 100 Stellar to me
+// Send 100 Stellar to yours truly
 auto reply = stellar.SendStellar("secret", "your_address", "g9j5EDysguoofGCsDS357HeHAeCg2NbxaW", 100);
 std::cout << "Payment status: " << reply.status << std::endl;
 
