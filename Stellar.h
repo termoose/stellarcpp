@@ -31,7 +31,7 @@ public:
     
     ~Stellar()
     {}
-    
+
     std::string request(const std::string& req, int timeout = 0);
     void subscribe(const std::string& user);
 
